@@ -10,11 +10,11 @@ I am responsible for the photo gallery. I am excited to gain exposure to media-c
 
 ### What will you have to do to recreate this module?
 
-What is it's main functionality or purpose?
+*What is it's main functionality or purpose?*
 
 The photo gallery module provides the end user with a collection of images representing the product of interest. The user has the ability to select from these images.
 
-What are important design/styles to create for the user experience?
+*What are important design/styles to create for the user experience?*
 
 When an image is selected by the user, the main photo on the page must be changed accordingly. Additional important considerations for the user experience include the zoom in on hover and expanded view on click functionalities.
 
@@ -61,3 +61,9 @@ Does the page load faster or create a better user experience?
 We met as a group to divide modules and design the layout of the page. I did some initial research on Git workflow, scanned the Airbnb style guide and got oriented with Trello. I also sketched a rough outline for my component. I learned about feature branch workflow which involves creating new branches when starting work on new features.
 
 Overall, it felt like a slow start. Because I have the tendency to research until mastery, I need to resist the urge to browse every resource from a search as this is a time sink.
+
+### Day 2
+
+To start off the day, I browsed through MongoDB and Mongoose documentation and related blogs. Installing MongoDB proved much more difficult and time-consuming than initially anticipated. As with all things, I believe I overcomplicated this by piecing together instructions from various sites instead of simply consulting documentation. I still have an aversion to documentation, so I definitely plan to work on this moving forward.
+
+In the afternoon, I registered for S3 and uploaded a few images with which I created a sample database and collection using Compass. I set up React, Webpack, Babel, Express and MongoDB to begin passing data from the client to server to database and back.
