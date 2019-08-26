@@ -75,3 +75,11 @@ In the afternoon, I registered for S3 and uploaded a few images with which I cre
 React is now receiving dummy data from MongoDB, specifically links to images on S3, and rendering it to the page. To my existing MediaContainer component, I added the following components: AdditionalMedia, Caption, Image, MainImage and Video. Using my wireframe as a guide, I have nested some components within others, successfully passing state down.
 
 The better part of my day was spent uploading images to S3 and creating a guide for my team so that they could do the same. In addition, I read through the first part of a Medium article on deployment utilizing EC2 and PM2. I am currently running an instance on EC2.
+
+### Day 4
+
+I started my day with light reading on flexbox then jumped into styling my components. Though fun, CSS is challenging due to the vast number of available properties. By the end of the day, my module somewhat resembles Amazon's image gallery with a few issues needing to be fine-tuned.
+
+### Day 5
+
+I continued to work with CSS to style my component. I struggled with setting dimensions and maximum dimensions. The biggest challenge - that is yet to be solved - was making the images responsive to the size of the window. By the time my component looked nearly identical to Amazon's (by brute force), I realized my code had gotten dense and convoluted. As I added code to tweak a feature, another component broke or lost its position or appearance. I am considering starting afresh, individually adding rules from my current stylesheet to filter through unnecessary lines.
