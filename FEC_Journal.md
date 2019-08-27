@@ -83,3 +83,11 @@ I started my day with light reading on flexbox then jumped into styling my compo
 ### Day 5
 
 I continued to work with CSS to style my component. I struggled with setting dimensions and maximum dimensions. The biggest challenge - that is yet to be solved - was making the images responsive to the size of the window. By the time my component looked nearly identical to Amazon's (by brute force), I realized my code had gotten dense and convoluted. As I added code to tweak a feature, another component broke or lost its position or appearance. I am considering starting afresh, individually adding rules from my current stylesheet to filter through unnecessary lines.
+
+### Day 6
+
+I proceeded with creating a new stylesheet, referencing individual rules from my former file. I found much success in doing so as this allowed me to eliminate extraneous property declarations. I set width and height of images as percentages to address yesterday's issue with image resizing, relying heavily on Chrome DevTools - notably the device toolbar - to ensure my images were responsive.
+
+Image scaling is a feature I hope to revisit before the conclusion of this project. Using the CSS object-fit property, I was able to resize the main image to fit inside its container while maintaining its original aspect ratio. This, however, did not work as desired for landscape images which were enlarged to meet the 'height: 100%' property. I believe I can correct this by adding an orientation-dependent class to the image in React and specifically tailoring width and height properties to each.
+
+On the backend, I seeded my database using the `Model.insertMany()` function. I deliberated file structure for quite a while before separating server requests from database queries. I remain confused when it comes to MVC architecture but plan to reorganize my files if time permits. I also came across an issue with the `Model.find()` function, thinking it returned an object. Upon reading documentation, I learned that this function returns a mongoose Query object which can be executed by either (a) passing in a callback function or (b) calling the `.then()` function which allows the object to be used as a promise.
