@@ -98,6 +98,6 @@ The majority of my day was devoted to researching how to zoom on hover. Because 
 
 Next, I faced the task of finding coordinates relative to the image which, I imagine, requires the dimensions of the image. This was complicated by the `object-fit: contain` property used to resize the image. I could not discover a way to access the dimensions of images (see below, yellow outline) that were scaled down to fit in a container (red outline).
 
-![Differing Dimensions](differing_dimensions.png?raw=true "Image vs. Container")
+![Differing Dimensions](differing_dimensions.png "Image vs. Container")
 
 At this point, I am debating using a magnifier library - will implementing from scratch be a rewarding learning experience or will my time be better spent coding a different feature? On a different note, I have migrated my database from my local instance of MongoDB to Atlas to prepare for deployment. I also deployed my client and proxy server, both of which are running on separate EC2 instances. I will need to do further research on how to authorize requests to Atlas from AWS.
