@@ -91,3 +91,13 @@ I proceeded with creating a new stylesheet, referencing individual rules from my
 Image scaling is a feature I hope to revisit before the conclusion of this project. Using the CSS object-fit property, I was able to resize the main image to fit inside its container while maintaining its original aspect ratio. This, however, did not work as desired for landscape images which were enlarged to meet the 'height: 100%' property. I believe I can correct this by adding an orientation-dependent class to the image in React and specifically tailoring width and height properties to each.
 
 On the backend, I seeded my database using the `Model.insertMany()` function. I deliberated file structure for quite a while before separating server requests from database queries. I remain confused when it comes to MVC architecture but plan to reorganize my files if time permits. I also came across an issue with the `Model.find()` function, thinking it returned an object. Upon reading documentation, I learned that this function returns a mongoose Query object which can be executed by either (a) passing in a callback function or (b) calling the `.then()` function which allows the object to be used as a promise.
+
+### Day 7
+
+The majority of my day was devoted to researching how to zoom on hover. Because there is no native event handler for hover in React, I combined `onMouseEnter`, `onMouseMove` and `onMouseLeave` to achieve a similar effect. I tied these mouse events to a function that tracks coordinates of the mouse when within the frame of the MainImage component.
+
+Next, I faced the task of finding coordinates relative to the image which, I imagine, requires the dimensions of the image. This was complicated by the `object-fit: contain` property used to resize the image. I could not discover a way to access the dimensions of images (see below, yellow outline) that were scaled down to fit in a container (red outline).
+
+![Differing Dimensions] (/Users/juliakim/Desktop/differing_dimensions.png)
+
+At this point, I am debating using a magnifier library - will implementing from scratch be a rewarding learning experience or will my time be better spent coding a different feature? On a different note, I have migrated my database from my local instance of MongoDB to Atlas to prepare for deployment. I also deployed my client and proxy server, both of which are running on separate EC2 instances. I will need to do further research on how to authorize requests to Atlas from AWS.
