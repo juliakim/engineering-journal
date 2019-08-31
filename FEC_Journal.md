@@ -101,3 +101,25 @@ Next, I faced the task of finding coordinates relative to the image which, I ima
 ![Differing Dimensions](differing_dimensions.png "Image vs. Container")
 
 At this point, I am debating using a magnifier library - will implementing from scratch be a rewarding learning experience or will my time be better spent coding a different feature? On a different note, I have migrated my database from my local instance of MongoDB to Atlas to prepare for deployment. I also deployed my client and proxy server, both of which are running on separate EC2 instances. I will need to do further research on how to authorize requests to Atlas from AWS.
+
+### Day 8
+
+I divided my time between creating an expanded view modal and embedding videos for the few products with links. The modal was relatively simple to set up with the exception being the click-outside-to-close function and dimmed background. I created a new component, ExpandedView, to serve as the popover that appears when the main image is clicked. To this, I had to add a temporary event listener and ref to prevent closing the modal from clicks within it. I emulated the dimmed background effect by adding a shadow to the modal - 'hacky' but will do for now.
+
+After implementing the modal, I noticed that the orange selected item border disappeared upon my mouse leaving the thumbnail. I should have considered this when debating between using Javascript or CSS for this effect. I will eventually refactor this with React.
+
+### Day 9
+
+After experimenting with CSS, I styled the expanded view overlay to resemble Amazon's, primarily using flexbox to position components. I conditionally tagged components with IDs to render different pages depending on video availability. At this time, the overlay does not scale with window size.
+
+### Day 10
+
+To keep consistent with Amazon, I reexamined the outline on hover effect that did not persist when the overlay was opened. Instead of using the `:hover` selector through CSS, I added a conditional ID and another property, hoveredThumbnail, to the state of my top level React component to track the selected thumbnail. This solved the issue with losing the border.
+
+Previously, I noticed that the overlay did not prevent state changes in other components.
+
+![Changes in background](https://media.giphy.com/media/SqZ9TGwrwGjQLF2BJv/giphy.gif)
+
+I wrapped the ExpandedView component in a div to prevent mouse events from falling through to the elements behind it. This div is positioned below the popover but above all other components. I also removed the modal's shadow and instead added a light gray background to this div to preserve the shaded effect.
+
+![Prevent state changes in background](https://media.giphy.com/media/H6bzsFknsoLkadATt6/giphy.gif)
