@@ -123,3 +123,15 @@ Previously, I noticed that the overlay did not prevent state changes in other co
 I wrapped the ExpandedView component in a div to prevent mouse events from falling through to the elements behind it. This div is positioned below the popover but above all other components. I also removed the modal's shadow and instead added a light gray background to this div to preserve the shaded effect.
 
 ![Prevent state changes in background](https://media.giphy.com/media/H6bzsFknsoLkadATt6/giphy.gif)
+
+### Day 11
+
+I completed most of the CSS styling for the modal, positioning most components in fixed places.
+
+### Day 12
+
+I mentioned previously that the modal as a whole does not perfectly scale - this is precisely because it was being appended to the same div as the MediaContainer component whose width was set to 50%. I needed to find a way for the modal to receive props from it's parent component, MediaContainer, while maintaining a width of 100%. In researching this issue, I discovered portals, a React 16 feature that allows the user to render a child component to a DOM node outside the current DOM hierarchy, as the perfect remedy. This would allow me to render the modal to a different div without a preset width all the while continuing to propagate to the parent component.
+
+I also made changes to CSS in order to make the contents of the modal responsive. Most of this was achieved using viewport units and `calc()` with media queries to set a maximum font size.
+
+Lastly, I reconfigured my EC2 instance to serve my HTML file using nginx - to route port 80 traffic to my desired port - and PM2 - to keep the node.js process running.
